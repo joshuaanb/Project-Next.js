@@ -1,0 +1,34 @@
+'use client';
+
+import Navbar from '@/components/Navbar';
+import SequenceScrollClient from '@/components/SequenceScrollClient';
+import AboutSection from '@/components/AboutSection';
+import StatsSection from '@/components/StatsSection';
+import BentoSection from '@/components/BentoSection';
+import TestimonialSection from '@/components/TestimonialSection';
+import CTASection from '@/components/CTASection';
+
+export default function HomePage() {
+  return (
+    <main className="relative w-full">
+      <Navbar />
+      <SequenceScrollClient />
+      <div className="relative z-10 bg-[#fdfaf5] rounded-t-[3rem] shadow-2xl pb-20">
+         <AboutSection />
+         <StatsSection />
+         <BentoSection />
+         <TestimonialSection />
+         <CTASection />
+         <footer className="bg-amber-950 py-20 text-center text-amber-100">
+            <h2 className="font-outfit text-[12vw] font-bold leading-none opacity-20">TUKU</h2>
+            <div className="mt-10 flex justify-center gap-8 font-outfit">
+                <a href="#">Instagram</a>
+                <a href="#">Contact</a>
+                <a href="#">Locations</a>
+            </div>
+            <p className="mt-10 text-xs opacity-50">© 2026 Tuku Coffee. All rights reserved.</p>
+         </footer>
+      </div>
+    </main>
+  );
+}
