@@ -9,7 +9,7 @@ function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
     damping: 50,
     stiffness: 100,
   });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (isInView) {
@@ -18,14 +18,14 @@ function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
-    springValue.on("change", (latest) => {
+    return springValue.on("change", (latest) => {
       if (ref.current) {
         ref.current.textContent = Math.floor(latest).toLocaleString() + suffix;
       }
     });
   }, [springValue, suffix]);
 
-  return <span ref={ref} />;
+  return <span ref={ref}>0{suffix}</span>;
 }
 
 export default function StatsSection() {
